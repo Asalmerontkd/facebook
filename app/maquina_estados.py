@@ -43,7 +43,7 @@ class MaquinaEstados(object):
         else:
             self.replies_bot.send_alert(self.user.sender_id, "Presiona una opción del recuadro anterior")
 
-    def estadso30(self):
+    def estado30(self):
         self.replies_bot.state_30(self.user.sender_id)
         states.overwriteState("states.txt",10)
 

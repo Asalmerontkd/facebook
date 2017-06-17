@@ -12,8 +12,8 @@ from maquina_estados import User, MaquinaEstados
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = "EAAaXjn5byVQBAEWTkcZCakWPWANQNLhBxYZBjkZBSGZCaomjHZB915cZCda8KZAGDD2un9Cf3AZCak1EayAZBgNuXJUHnLClSfo1Sv7lazEmVXjOKZBdgXd8H5YLGO33LDFa2DUSdwB0piECwbJgCI800jeaPHZAyyzuIO9wKzaB0cVGwZDZD"
-VERIFY_TOKEN = "HOLASOYCOMPRAMEX"
+ACCESS_TOKEN = ""
+VERIFY_TOKEN = ""
 
 bot = Bot(ACCESS_TOKEN)
 user = User()
@@ -53,7 +53,7 @@ def webhook():
 			return request.args.get('hub.challenge')
 		return "Verificar el token"
 
-	return "Chatbot Grupo Salinas"
+	return "Chatbot"
 
 def get_public_data(idSender):
 	try:
