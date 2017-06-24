@@ -29,16 +29,20 @@ class RepliesBot(object):
 
 	def state_10(self,sender_id, name):
 		'''Presentación bot'''
-		text = "Hola "+name+", soy el Bot de Compra-Mex ❤"
+		text = "Hola "+name+", soy un Bot"
 		self.bot.send_text_message(sender_id, text)
 		message = "¿Qué deseas hacer?"
 		self.bot.send_button_message(sender_id, message, self.buttons['state10'])
 
 	def state_30(self,sender_id):
-		text = "Dime que producto quieres comprar para mostrate tiendas 100% mexicanas"
+		text = "Dime que producto "
 		self.bot.send_text_message(sender_id,text)
 
 
 	def state_40(self,sender_id):
 		text = "Estadito 40 bb"
 		self.bot.send_text_message(sender_id,text)
+
+	def state_50(self, sender_id):
+		image_url = "https://www.siass.unam.mx/images/home_alumnos/siass_unam_1.jpg"
+		self.bot.send_image_url(sender_id, image_url)

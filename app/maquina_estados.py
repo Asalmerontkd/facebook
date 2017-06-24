@@ -15,6 +15,7 @@ class MaquinaEstados(object):
             20: self.estado20,
             30: self.estado30,
             40: self.estado40,
+            50: self.estado50
         }
 
     def find_state(self, estado, payload=None):
@@ -49,3 +50,9 @@ class MaquinaEstados(object):
 
     def estado40(self):
         self.replies_bot.state_40(self.user.sender_id)
+        self.find_state(50)
+
+    def estado50(self):
+        self.replies_bot.state_50(self.user.sender_id)
+        states.overwriteState("states.txt",10)
+

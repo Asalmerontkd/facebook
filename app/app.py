@@ -12,8 +12,8 @@ from maquina_estados import User, MaquinaEstados
 
 app = Flask(__name__)
 
-ACCESS_TOKEN = ""
-VERIFY_TOKEN = ""
+ACCESS_TOKEN = "EAAGQiOw21oABABfAa7qrORsFyQSwORB8olPplosYZCH5BpeUbkNZC5U7arzZB7tpVvqmLP9QZAyHF6eaJDKE2L9rmyEtIAIZAX0QkZAOmkALGHbme1jFlmFNlpK1yG9EBouSJVWZBdSYSqAxdOOGsmYBvgUG4vIVvXqFR1VGL3FmVKyXjAiruKZA"
+VERIFY_TOKEN = "MyToken"
 
 bot = Bot(ACCESS_TOKEN)
 user = User()
@@ -35,6 +35,8 @@ def webhook():
 			print (" ")
 			for event in output['entry']:
 				messaging = event['messaging']
+
+				userResponse = requests.get('https://graph.facebook.com/v2.6/' + str(idSender) + '?fields=first_name,last_name,profile_pic,locale,timezone,gender&access_token=' + token_page)
 				
 				for evtMessage in messaging:
 					recipient_id = evtMessage['sender']['id']
